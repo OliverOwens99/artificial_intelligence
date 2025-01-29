@@ -33,8 +33,8 @@ if __name__ == "__main__":
     expectedOR = np.array([0.0, 1.0, 1.0, 1.0])
     # Create and train perceptron
     p = Perceptron(2)
-    p.train(data, expected, 10000)
-
+    p.train(data, expectedAND, 10000)
+    #p.train(data, expectedOR, 10000)
     # Test results
     for inputs in data:
         print(f"Input: {inputs}, Output: {p.predict(inputs)}")
