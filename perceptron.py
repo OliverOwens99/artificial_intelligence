@@ -29,8 +29,8 @@ if __name__ == "__main__":
         [0.0, 1.0],
         [1.0, 1.0]
     ])
-    expected = np.array([0.0, 0.0, 0.0, 1.0])
-
+    expectedAND = np.array([0.0, 0.0, 0.0, 1.0])
+    expectedOR = np.array([0.0, 1.0, 1.0, 1.0])
     # Create and train perceptron
     p = Perceptron(2)
     p.train(data, expected, 10000)
