@@ -93,10 +93,12 @@ public class Perceptron {
             {0.00f, 1.00f},
             {1.00f, 1.00f}
         };
-        float[] expected = {0.00f, 1.00f, 1.00f, 1.00f};
+        float[] expectedAND = {0.00f, 0.00f, 0.00f, 1.00f};
+        float[] expectedOR = {0.00f, 1.00f, 1.00f, 1.00f};
 
         Perceptron p = new Perceptron(2);
-        p.train(data, expected, 10000);
+        p.train(data, expectedOR, 10000);
+        //p.train(data, expectedAND, 10000);
         p.test(data);
     }
 }
