@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "Lab 2/Encog_lab/src"
+    ],
+    "java.project.referencedLibraries": [
+        "Lab 2/Encog_lab/src/encog-core-3.4.jar"
+    ]
+}
