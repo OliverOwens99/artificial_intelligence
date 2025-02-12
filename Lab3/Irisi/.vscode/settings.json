@@ -1,7 +1,9 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "/workspaces/artificial_intelligence/Lab3/Irisi/lib/encog-core-3.4.jar"
     ]
 }
