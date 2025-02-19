@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "/workspaces/artificial_intelligence/Lab4/org/encog/examples/guide/regression/AutoMPGRegression/lib/encog-core-3.4.jar"
+    ]
+}
