@@ -51,15 +51,9 @@ public class AutoMPGRegression {
 	private String tempPath;
 
 	public File downloadData(String[] args) throws MalformedURLException {
-		if (args.length != 0) {
-			tempPath = args[0];
-		} else {
-			tempPath = System.getProperty("java.io.tmpdir");
-		}
-
-		File mpgFile = new File(tempPath, "auto-mpg.data");
-		BotUtil.downloadPage(new URL(AutoMPGRegression.DATA_URL), mpgFile);
-		System.out.println("Downloading auto-mpg dataset to: " + mpgFile);
+		// Use the local auto-mpg.csv file directly
+		File mpgFile = new File("auto-mpg.csv");
+		System.out.println("Using local dataset from: " + mpgFile.getAbsolutePath());
 		return mpgFile;
 	}
 
@@ -71,7 +65,7 @@ public class AutoMPGRegression {
 			// Define the format of the data file.
 			// This area will change, depending on the columns and 
 			// format of the file that you are trying to model.
-			CSVFormat format = new CSVFormat('.',' '); // decimal point and space separated
+			CSVFormat format = new CSVFormat('.',','); // decimal point and space separated
 			VersatileDataSource source = new CSVDataSource(filename, false, format);
 			
 			VersatileMLDataSet data = new VersatileMLDataSet(source);
@@ -107,7 +101,7 @@ public class AutoMPGRegression {
 			// MLMethodFactor.TYPE_NEAT: NEAT Neural Network
 			// MLMethodFactor.TYPE_PNN: Probabilistic Neural Network
 			EncogModel model = new EncogModel(data);
-			model.selectMethod(data, MLMethodFactory.TYPE_NEAT);
+			model.selectMethod(data, MLMethodFactory.TYPE_FEEDFORWARD);
 			
 			// Send any output to the console.
 			model.setReport(new ConsoleStatusReportable());
